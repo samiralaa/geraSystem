@@ -15,9 +15,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user =$request;
+        $user =$request->user();
       
-        if ($user->role=='admin') {
+        if (!$user) {
             return $next($request);
         }else{
             dd('ddf');
