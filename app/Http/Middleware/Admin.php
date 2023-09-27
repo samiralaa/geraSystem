@@ -15,13 +15,12 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user =$request->user();
-      
-        if (!$user) {
-            return $next($request);
-        }else{
-            dd('ddf');
-        }
        
+        if (!auth()) {
+            return  ('Your account is inactive');
+        }
+
+    
+        return $next($request);
     }
 }
