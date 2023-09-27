@@ -11,6 +11,11 @@ class Category extends Model
     protected $fillable =['name','store_id'];
     function store()
     {
-        return $this->belongsTo(Store::class);
+        return $this->belongsTo(Store::class,'store_id','id')
+        ->withDefault([
+            'name'=>'samir'
+            ]
+        );
     }
+
 }

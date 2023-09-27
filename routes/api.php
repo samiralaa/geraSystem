@@ -18,6 +18,6 @@ use App\Http\Controllers\StoreController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('index/all',[StoreController::class,'index']);
+
 
 

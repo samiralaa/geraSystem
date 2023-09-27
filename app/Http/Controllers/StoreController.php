@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Controller
 {
@@ -13,12 +14,11 @@ class StoreController extends Controller
     public function index()
     {
         $date =Store::with(['categorys','products'])->get();
+        
        return response()->json($date);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+  
     public function create()
     {
         //
